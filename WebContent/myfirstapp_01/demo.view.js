@@ -13,12 +13,27 @@ sap.ui.jsview("myfirstapp_01.demo", {
 	* @memberOf myfirstapp_01.demo
 	*/ 
 	createContent : function(oController) {
- 		return new sap.m.Page({
-			title: "Title",
+		
+		const oSimpleInput = new sap.m.Input({
+			placeholder: "Enter Name",
+		});
+
+// the properties are defined in the brackets
+		const oBtn = new sap.m.Button({
+			text: "Enter",
+
+		})
+
+// Looks like the pattern is to define all the content, then put it in the   content   array of the oPage object.
+		const oPage = new sap.m.Page({
+			title: "Simple App",
 			content: [
-			
+				oSimpleInput,
+				oBtn,
 			]
 		});
+
+		return oPage;
 	}
 // doing a little test here.  and some more!
 });
